@@ -2,8 +2,8 @@
 LKM for sending and receiving infrared signals (and others)
 
 ## Installation
-* Clone Repo and compile the module on the Raspberry Pi or another board (testet only on RPI).
-* "insmod" the module.
+* Clone repo and compile the module on the Raspberry Pi or another board (testet only on RPI).
+* `insmod` the module. (Sorry but i will not explain how to build a kernel module...)
 
 ## Usage
 
@@ -12,9 +12,11 @@ This device can be used as a regular file.
 
 Only one process at a time can access it, the others have to wait. But any action can be interrupted with ctrl+c.
 
-* To record a signal just read the file with cat or something else.
+* To record a signal just read the file with `cat` or something else.
 
-* To send the recorded signal just wirte the signal to the file.
+* To send the recorded signal just wirte the signal with `echo` to the file.
+
+You need `sudo` for interacting with the module.
 
 You have to use the format of the recorded signal: 
 `MILLIS.MICROS|MILLIS.MICROS|`...
@@ -25,7 +27,7 @@ The last state is always pulled to zero after the period to protect the hardware
 ## Options
 
 You can configure the module for different use cases.
-This is accomplished at insmod-time by appending "param=value".
+This is accomplished at `insmod`-time by appending `param=value`.
 
 Possible parameters:
 
