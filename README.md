@@ -37,7 +37,9 @@ Possible parameters:
 * `max-size`: The maximum number of pulses a signal can contain before it is discarded (default=200).
 * `min-size`: The minimum number of pulses a signal must contain in order to interpret it as signal (default=50).
 * `freq`: The carrier-frequency (in kHz) of the signal, if pwm is used to transmit it (default=36).
-* `pwm`: Integer value that acts as a divider. `0`=no pwm, `2`=50% duty cycle, `3`=33%, `4`=25%, and so on. Negative numbers invert the on/off periods. `1` can be used but `0` is better in terms of performance. 
+* `pwm`: Integer value that acts as a divider. `0`=no pwm, `2`=50% duty cycle, `3`=33%, `4`=25%, and so on. Negative numbers invert the on/off periods. `1` can be used but `0` is better in terms of performance (default=2). 
+
+You can check your inputs and possible recording failures with `dmesg -w`.
 
 
 I use the module for receiving and transmitting infrared signals, but it can be used for any tpe of signal. But 433MHZ-RF for instance is not possible because of the heavy noise in the receiver.
