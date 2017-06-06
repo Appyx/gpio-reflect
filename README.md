@@ -2,8 +2,8 @@
 LKM for sending and receiving infrared signals (and others)
 
 ## Installation
-* Clone repo and compile the module on the Raspberry Pi or another board (testet only on RPI).
-* `insmod` the module. (Sorry but i will not explain how to build a kernel module...)
+* Clone the repo and compile the module for the Raspberry Pi or another board ([really good tutorial](http://lostindetails.com/blog/post/Compiling-a-kernel-module-for-the-raspberry-pi-2)).
+* `insmod` the module.
 
 ## Usage
 
