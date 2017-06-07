@@ -34,8 +34,8 @@ Possible parameters:
 * `in`: Number for the input-pin (default=15).
 * `out`: Number for the output-pin (default=18).
 * `timeout`: Timespan in milliseconds after the last signal-component is recorded (default=1000).
-* `max-size`: The maximum number of pulses a signal can contain before it is discarded (default=200).
-* `min-size`: The minimum number of pulses a signal must contain in order to interpret it as signal (default=50).
+* `max_size`: The maximum number of pulses a signal can contain before it is discarded (default=200).
+* `min_size`: The minimum number of pulses a signal must contain in order to interpret it as signal (default=50).
 * `freq`: The carrier-frequency (in kHz) of the signal, if pwm is used to transmit it (default=36).
 * `pwm`: Integer value that acts as a divider. `0`=no pwm, `2`=50% duty cycle, `3`=33%, `4`=25%, and so on. Negative numbers invert the on/off periods. `1` can be used but `0` is better in terms of performance (default=2). 
 
