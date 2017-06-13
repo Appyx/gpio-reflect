@@ -1,9 +1,32 @@
 # gpio-reflect
-LKM for sending and receiving infrared signals (and others)
+LKM for sending and receiving infrared signals (and others).
+
+With this module it is possible to record and send signals by using hardware at the GPIO pins. These signals are interpreted protocol-independent, so any signal can be used.
+
+The module recognizes over 50% of errors when recording signals. This error recognition can be customized with additional options.
+
+Only one key press on a remote control is necessary to record the whole signal.
+
+Once a signal is recorded it works without any errors. PWM can be adjusted in order to support almost all devices.
+The best signals are created on a Raspberry Pi 3 Model B (or a faster board).
+
+
 
 ## Installation
 * Clone the repo and compile the module for the Raspberry Pi or another board ([really good tutorial](http://lostindetails.com/blog/post/Compiling-a-kernel-module-for-the-raspberry-pi-2)).
 * `insmod` the module.
+
+For Raspberry Pi (Jessie):
+* `sudo apt-get update -y`
+* `sudo apt-get upgrade -y`
+* `sudo rpi-update` (maybe first `sudo apt-get install rpi-update`)
+* `git clone https://github.com/Appyx/gpio-reflect.git`
+* `cd gpio-reflect`
+* `sudo ./install.sh` (This will take some time)
+* `sudo insmod gpio-reflect [options]`
+
+The install script needs to build the right kernel tree, so it can take several minutes to complete. To speed this up you can install it manually with the tutorial linked above.
+
 
 ## Usage
 
