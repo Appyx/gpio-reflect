@@ -72,6 +72,7 @@ static int device_open(struct inode *i, struct file *f) {
 }
 static int device_close(struct inode *i, struct file *f) {
 	read_pos = 0; //reset position
+	kfree(read_buf);
 	read_buf = NULL; //reset buffer
 	mutex_unlock(&lock);
 	return SUCCESS;
