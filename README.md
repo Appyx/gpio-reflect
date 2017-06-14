@@ -22,10 +22,17 @@ For Raspberry Pi (Jessie):
 * `sudo rpi-update` (maybe first `sudo apt-get install rpi-update`)
 * `git clone https://github.com/Appyx/gpio-reflect.git`
 * `cd gpio-reflect`
-* `sudo ./install.sh` (This will take some time)
+* `sudo ./build.sh` (This will take some time)
 * `sudo insmod gpio-reflect [options]`
 
-The install script needs to build the right kernel tree, so it can take several minutes to complete. To speed this up you can install it manually with the tutorial linked above.
+The build script needs to build the right kernel tree, so it can take several minutes to complete. To speed this up you can build it manually with the tutorial linked above.
+
+For a permanent installation (Raspberry Pi):
+
+* copy `gpio-reflect.ko` to `/lib/modules/$(uname -r)/kernel/drivers`
+* add `gpio-reflect` to `/etc/modules`
+* create the file `/etc/modprobe.d/gpio-reflect.conf`
+* add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
 
 
 ## Usage
