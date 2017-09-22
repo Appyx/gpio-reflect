@@ -13,6 +13,17 @@ The best signals are created on a Raspberry Pi 3 Model B (or a faster board).
 
 
 ## Installation
+
+### The easy way
+
+* `wget https://github.com/Appyx/gpio-reflect/releases/download/SOMEVERSION`
+
+If there is a release for your OS you are lucky. If the kernel version does not match you can just try a version that is similar enough.
+
+If no version is working you have to do it the hard way.
+
+
+### The hard way
 * Clone the repo and compile the module for the Raspberry Pi or another board ([really good tutorial](http://lostindetails.com/blog/post/Compiling-a-kernel-module-for-the-raspberry-pi-2)).
 * `insmod` the module.
 
