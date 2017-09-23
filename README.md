@@ -18,7 +18,7 @@ The best signals are created on a Raspberry Pi 3 Model B (or a faster board).
 
 * `wget https://github.com/Appyx/gpio-reflect/releases/download/SOMEVERSION`
 
-If there is a release for your OS you are lucky. If the kernel version does not match you can just try a version that is similar enough.
+If there is a release for your Raspbian OS you are lucky. If the kernel version does not match you can just try a version that is similar enough.
 
 If no version is working you have to do it the hard way.
 
@@ -27,16 +27,16 @@ If no version is working you have to do it the hard way.
 * Clone the repo and compile the module for the Raspberry Pi or another board ([really good tutorial](http://lostindetails.com/blog/post/Compiling-a-kernel-module-for-the-raspberry-pi-2)).
 * `insmod` the module.
 
-For Raspberry Pi (Jessie):
+For Raspberry Pi (Stretch):
 * `sudo apt-get update -y`
 * `sudo apt-get upgrade -y`
 * `sudo rpi-update` (maybe first `sudo apt-get install rpi-update`)
 * `git clone https://github.com/Appyx/gpio-reflect.git`
 * `cd gpio-reflect`
-* `sudo ./build.sh` (This will take some time)
+* `sudo ./build.sh` (This will take some time, but it's much faster now)
 * `sudo insmod gpio-reflect [options]`
 
-The build script needs to build the right kernel tree, so it can take several minutes to complete. To speed this up you can build it manually with the tutorial linked above.
+The build script needs to build the right kernel source, so it can take several minutes to complete.
 
 For a permanent installation (Raspberry Pi):
 
