@@ -40,10 +40,14 @@ The build script needs to build the right kernel source, so it can take several 
 
 For a permanent installation (Raspberry Pi):
 
-* copy `gpio-reflect.ko` to `/lib/modules/$(uname -r)/kernel/drivers`
+* copy `gpio-reflect.ko` to `/lib/modules/$(uname -r)`
 * add `gpio-reflect` to `/etc/modules`
 * create the file `/etc/modprobe.d/gpio-reflect.conf`
 * add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
+* run `sudo depmod -a`
+* try to run `sudo modprobe gpio-reflect`
+* `sudo reboot`
+* run `lsmod |grep gpio` to see if it worked
 
 
 ## Usage
