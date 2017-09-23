@@ -4,7 +4,8 @@ sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -
 sudo chmod +x /usr/bin/rpi-source
 /usr/bin/rpi-source -q --tag-update
 rpi-source --skip-gcc
-make
+sudo make
+
 
 
 
