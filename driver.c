@@ -10,6 +10,7 @@
 #include <linux/interrupt.h>
 #include <linux/slab.h> //kmalloc and free
 #include <asm/uaccess.h>
+#include <linux/uaccess.h>
 #include <linux/string.h>
 #include <linux/mutex.h>
 #include "driver.h"
