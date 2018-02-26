@@ -44,15 +44,15 @@ For a permanent installation (Raspberry Pi):
 * add `gpio-reflect` to `/etc/modules`
 * create the file `/etc/modprobe.d/gpio-reflect.conf`
 * add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
-* run `sudo depmod -a`
+* run `sudo depmod -a` (very imnportant even if you use the default options!)
 * try to run `sudo modprobe gpio-reflect`
 * `sudo reboot`
-* run `lsmod |grep gpio` to see if it worked
+* run `lsmod |grep gpio` to see if it worked (you can also use `dmesg`)
 
 
 ## Usage
 
-After inmodding the module a device appears under /dev/gpio-reflect.
+After insmodding the module a device appears under /dev/gpio-reflect.
 This device can be used as a regular file.
 
 Only one process at a time can access it, the others have to wait. But any action can be interrupted with ctrl+c.
