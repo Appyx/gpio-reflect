@@ -61,7 +61,7 @@ Only one process at a time can access it, the others have to wait. But any actio
 
 * To send the recorded signal just wirte the signal with `echo` to the file.
 
-You need `sudo` for interacting with the module. The scripts `irsend` and `irsniff` make the sudo access easier. Just execute the script with sude and add the signal as parameter.
+You need `sudo` for interacting with the module. The scripts `irsend` and `irsniff` make the sudo access easier. Just execute the script with sudo and add the signal as parameter.
 
 You have to use the format of the recorded signal: 
 `MILLIS.MICROS|MILLIS.MICROS|`...
