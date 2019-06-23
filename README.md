@@ -33,7 +33,7 @@ To try the different releases you can just `insmod gpio-reflect.ko`.
 * `sudo apt-get install raspberrypi-kernel-headers`
 * `git clone https://github.com/Appyx/gpio-reflect.git`
 * `cd gpio-reflect`
-* `make`
+* `sudo make`
 * `sudo insmod gpio-reflect [options]`
 
 Check if it's working with: `dmesg |grep gpio`
@@ -41,7 +41,7 @@ Check if it's working with: `dmesg |grep gpio`
 ### For a permanent installation (Raspbian only):
 
 * `cd gpio-reflect`
-* `make install`
+* `sudo make install`
 * add `gpio-reflect` to `/etc/modules`
 * optional: create the file `/etc/modprobe.d/gpio-reflect.conf`
 * optional: add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
