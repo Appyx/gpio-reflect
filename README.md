@@ -14,38 +14,38 @@ The best signals are created on a Raspberry Pi 3 Model B (or a faster board).
 
 ## Installation
 
-### The easy way
+### The easy way:
 
 * `wget https://github.com/Appyx/gpio-reflect/releases/download/SOMEVERSION`
 
-If there is a release for your Raspbian OS you are lucky. If the kernel version does not match you can just try a version that is similar enough.
+If there is a release for your Raspbian kernel you are lucky. If the kernel version does not match, you can just try a version that is similar enough.
 
-If no version is working you have to do it the hard way.
+To try the different releases you can just `insmod gpio-reflect.ko`.
 
 
-### The hard way
+### The manual way:
 * Clone the repo and compile the module for the Raspberry Pi or another board ([really good tutorial](http://lostindetails.com/blog/post/Compiling-a-kernel-module-for-the-raspberry-pi-2)).
 * `insmod` the module.
 
-For Raspberry Pi (Stretch):
+### The Raspbian (Stretch) way:
 * `sudo apt-get update -y`
 * `sudo apt-get upgrade -y`
-* `sudo rpi-update` (maybe first `sudo apt-get install rpi-update`)
+* `sudo apt-get install raspberrypi-kernel-headers`
 * `git clone https://github.com/Appyx/gpio-reflect.git`
 * `cd gpio-reflect`
-* `sudo ./build.sh` (This will take some time, but it's much faster now)
+* `make`
 * `sudo insmod gpio-reflect [options]`
 
-The build script needs to build the right kernel source, so it can take several minutes to complete.
+Check if it's working with: `dmesg |grep gpio`
 
-For a permanent installation (Raspberry Pi):
+### For a permanent installation (Raspbian only):
 
-* copy `gpio-reflect.ko` to `/lib/modules/$(uname -r)`
+* `cd gpio-reflect`
+* `make install`
 * add `gpio-reflect` to `/etc/modules`
-* create the file `/etc/modprobe.d/gpio-reflect.conf`
-* add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
-* run `sudo depmod -a` (very imnportant even if you use the default options!)
-* try to run `sudo modprobe gpio-reflect`
+* optional: create the file `/etc/modprobe.d/gpio-reflect.conf`
+* optional: add the options to the file in the form: `options gpio-reflect param1=value1 param2=value2...`
+* run `sudo depmod -a`
 * `sudo reboot`
 * run `lsmod |grep gpio` to see if it worked (you can also use `dmesg`)
 

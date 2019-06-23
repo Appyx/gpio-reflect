@@ -54,7 +54,7 @@ void sig_receive_chunk(struct signal* sig, struct timespec* ts) {
 	}
 }
 
-static void timer_callback(unsigned long data) {
+static void timer_callback(struct timer_list *t) {
 	complete(&receiver->comp);
 }
 
@@ -63,7 +63,7 @@ int sig_receive(struct signal* sig) {
 	receiver = kzalloc(sizeof(*receiver), GFP_KERNEL);
 	init_completion(&receiver->comp);
 	getnstimeofday(&receiver->ts0);
-	setup_timer(&receiver->timer, timer_callback, 0);
+	timer_setup(&receiver->timer, timer_callback, 0);
 	receiver->empty = true;
 	if (wait_for_completion_interruptible(&receiver->comp)) {
 		del_timer(&receiver->timer);
